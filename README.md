@@ -1,3 +1,11 @@
+## Table of Contents
+- [Overview](#overview)
+- [Basic Exploit Structure](#basic-exploit-structure)
+- [Crafting the Exploit - Loading the Command String into Memory](#crafting-the-exploit---loading-the-command-string-into-memory)
+- [Crafting the Exploit - Calling WinExec](#crafting-the-exploit---calling-winexec)
+- [Crafting the Exploit - Final Touches](#crafting-the-exploit---final-touches)
+
+
 ## Overview
 This project demonstrates a simple buffer overflow attack. The vulnerable program reads a string from the user and then prints it back. However, the function used for reading user input, ```gets()```, does not verify whether the buffer is large enough for a given input, making it vulnerable to buffer overflow. This attack works on Windows with ASLR, stack canaries and non-executable stack disabled. The project includes three files:
 - ```vulnerable.c``` is the target of the attack
