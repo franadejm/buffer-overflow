@@ -7,7 +7,7 @@
 
 
 ## Overview
-This project demonstrates a simple buffer overflow attack. The vulnerable program reads a string from the user and then prints it back. However, the function used for reading user input, ```gets()```, does not verify whether the buffer is large enough for a given input, making it vulnerable to buffer overflow. This attack works on Windows with ASLR, stack canaries and non-executable stack disabled. The project includes three files:
+This project demonstrates a simple buffer overflow attack. The vulnerable program reads a string from the user and then prints it back. However, the function used for reading user input, ```gets()```, does not verify whether the buffer is large enough for a given input, making it vulnerable to buffer overflow. This attack works on x86 Windows with ASLR, stack canaries and non-executable stack disabled. The project includes three files:
 - ```vulnerable.c``` is the target of the attack
 - ```exploit.bin``` is the input we will give to the vulnerable program to execute our code (our goal will be to open a new terminal window and ping google)
 - ```getAddr.c``` is a helper program that will print the address of the function ```WinExec``` (its usefulnes will be apparent later)
